@@ -11,6 +11,8 @@ export const Container = styled.SafeAreaView`
 export const LogoText = styled.Text`
     font-size: 40px
     color: #000000
+    justify-content: center
+    align-items: center
     font-family: poppins
 `
 
