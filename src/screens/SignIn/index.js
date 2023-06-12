@@ -5,6 +5,7 @@ import { UserContext } from '../../contexts/UserContext'
 
 import { 
     Container,
+    LogoArea,
     LogoText,
     InputArea,
     CustomButton,
@@ -63,8 +64,10 @@ export default () => {
 
     return (
         <Container>
-            <LogoText>Fast Cut</LogoText>
-            <Chair_logo width="70" height="70" />
+            <LogoArea>
+                <LogoText>Fast Cut</LogoText>
+                <Chair_logo width="70" height="70" />
+            </LogoArea>
 
             <InputArea>
                 <SignInput 

@@ -1,11 +1,21 @@
 import React from 'react'
-import { Text } from 'react-native'
-import { Container } from './styles'
+
+import { 
+    Container,
+    LogoArea, 
+    LogoText,
+} from './styles'
+
+import Chair_logo from '../../assets/chair_logo'
 
 export default () => {
+
     return (
         <Container>
-            <Text>Home</Text>
+            <LogoArea>
+                <LogoText>Fast Cut</LogoText>
+                <Chair_logo width="70" height="70" />
+            </LogoArea>
         </Container>
     )
 }
