@@ -11,7 +11,8 @@ export const LogoArea = styled.View`
     flex-direction: column
     justify-content: center
     align-items: center
-    margin-top: -260px
+    margin-top: -160px
+    margin-bottom: 80px
 `
 export const LogoText = styled.Text`
     font-size: 40px
@@ -19,4 +20,17 @@ export const LogoText = styled.Text`
     justify-content: center
     align-items: center
     font-family: poppins
+`
+export const CustomButton = styled.TouchableOpacity`
+    height: 90px
+    width: 307px
+    background-color: #50B9B8
+    justify-content: center
+    align-items: center
+    margin-top: 15px
+`
+export const CustomButtonText = styled.Text`
+    font-size: 24px
+    font-family: poppins
+    color: #FFFFFF
 `
