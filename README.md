@@ -8,6 +8,7 @@ npm install react-native-gesture-handler
 npm install @react-navigation/bottom-tabs
 npm install @react-native-async-storage/async-storage
 npm install @react-native-community/geolocation
+
 npm install react-native-permissions
 **
 android>app>src>main> AndroidManifest.xml 
