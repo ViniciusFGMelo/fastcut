@@ -1,11 +1,17 @@
 import React from 'react'
 import { Text } from 'react-native'
-import { Container } from './styles'
+import { 
+    Container,
+    ServicesBox,
+    ServicesText,
+ } from './styles'
 
 export default () => {
     return (
         <Container>
-            <Text>Services</Text>
+            <ServicesBox>
+                <ServicesText>Apenas um teste</ServicesText>
+            </ServicesBox>
         </Container>
     )
 }
