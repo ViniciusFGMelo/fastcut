@@ -9,17 +9,26 @@ import {
     FakeSwiper,
     PageBody,
     UserInfoArea,
-    ServiceArea,
     SwipeDot,
     SwipeDotActive,
     SwipeItem,
     SwipeImage,
     UserAvatar,
     UserInfo,
-    UserInfoName
+    UserInfoName,
+    LoadingIcon,
+    ServiceArea,
+    ServicesTitle,
+    ServiceItem,
+    ServiceInfo,
+    ServiceName,
+    ServicePrice,
+    ServiceChooseButton,
+    ServiceChooseButtonText,
  } from './styles'
 
 import Api from '../../Api'
+
 
 export default () => {
     const navigation = useNavigation()
@@ -31,6 +40,8 @@ export default () => {
         name: route.params.name
     })
     const [loading, setLoading] = useState(false)
+    const [selectedService, setSelectedService] = useState(null)
+    const [showModal, setShowModal] = useState(false)
 
     useEffect(() =>{
         const getBarberInfo= async () => {
@@ -48,6 +59,10 @@ export default () => {
         getBarberInfo()
     }, [])
 
+    const handleServiceChoose = (key) => {
+
+    }
+
     return (
         <Container>
             <Scroller>
@@ -64,8 +79,8 @@ export default () => {
                                 <SwipeImage source={{uri:item.url}} resizeMode="cover"/>
                             </SwipeItem>
                         ))}
-                    </Swiper>
-                    :
+                    </Swiper> 
+                    : 
                     <FakeSwiper></FakeSwiper>
                 }
                 <PageBody>
@@ -75,9 +90,28 @@ export default () => {
                             <UserInfoName>{userInfo.name}</UserInfoName>
                         </UserInfo>
                     </UserInfoArea>
-                    <ServiceArea>
 
-                    </ServiceArea>
+                    {loading && <LoadingIcon size="large" color="#000000" />
+                    }
+
+                    {userInfo.services && 
+                        <ServiceArea>
+                            <ServicesTitle>Lista de serviços</ServicesTitle>
+
+                            {userInfo.services.map((item, key) =>(
+                                <ServiceItem key ={key}>
+                                    <ServiceInfo>
+                                        <ServiceName>{item.name}</ServiceName>
+                                        <ServicePrice>R$ {item.price}</ServicePrice>
+                                    </ServiceInfo>
+                                    <ServiceChooseButton onPress={()=>handleServiceChoose(key)}>
+                                        <ServiceChooseButtonText>Agendar</ServiceChooseButtonText>
+                                    </ServiceChooseButton>
+                                </ServiceItem>
+                            ))}
+
+                        </ServiceArea>
+                    }
                 </PageBody>
             </Scroller>
         </Container>
