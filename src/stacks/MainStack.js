@@ -24,9 +24,9 @@ export default () => (
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="MainTab" component={MainTab} />
-        <Stack.Screen name="Services" component={Services} />
+        {/* <Stack.Screen name="Services" component={Services} />
         <Stack.Screen name="Schedule" component={Schedule} />
-        <Stack.Screen name="Professionals" component={Professionals} />
+        <Stack.Screen name="Professionals" component={Professionals} /> */}
         <Stack.Screen name="Barber" component={Barber} />
     </Stack.Navigator>
 )

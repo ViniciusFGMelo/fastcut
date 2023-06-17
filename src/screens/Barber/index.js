@@ -3,6 +3,8 @@ import { Alert } from 'react-native'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import Swiper from 'react-native-swiper'
 
+import BarberModal from '../../components/BarberModal'
+
 import { 
     Container,
     Scroller,
@@ -61,7 +63,8 @@ export default () => {
     }, [])
 
     const handleServiceChoose = (key) => {
-
+        setSelectedService(key)
+        setShowModal(true)
     }
 
     return (
@@ -115,6 +118,13 @@ export default () => {
                     }
                 </PageBody>
             </Scroller>
+
+            <BarberModal
+                show={showModal}
+                setShow={setShowModal} 
+                user={userInfo}
+                service={selectedService}
+            />
         </Container>
     )
 }

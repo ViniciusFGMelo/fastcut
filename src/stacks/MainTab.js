@@ -6,6 +6,7 @@ import CustomTabBar from '../components/CustomTabBar'
 import Home from '../screens/Home'
 import Appointments from '../screens/Appointments'
 import Profile from '../screens/Profile'
+import Professionals from '../screens/Professionals'
 
 const Tab = createBottomTabNavigator()
 
@@ -18,7 +19,7 @@ export default () => (
         tabBar={props=><CustomTabBar {...props} />}
     >
         <Tab.Screen name="Profile" component={Profile} />
-        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Home" component={Professionals} />
         <Tab.Screen name="Appointments" component={Appointments} />
     </Tab.Navigator>
 )
