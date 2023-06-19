@@ -70,6 +70,35 @@ export default {
         const req = await fetch(`${BASE_API}/barber/${id}?token=${token}`);
         const json = await req.json();
         return json;
+    },
+    setAppointment: async (
+        userId,
+        service,
+        selectedYear,
+        selectedMonth,
+        selectedDay,
+        selectedHour
+        ) => {
+        const token = await AsyncStorage.getItem('token');
+
+        const req = await fetch(`${BASE_API}/auth/appointment`, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                token, 
+                id: userId,
+                service,
+                year: selectedYear,
+                month: selectedMonth,
+                day: selectedDay,
+                hour: selectedHour
+            })
+        });
+        const json = await req.json();        
+        return json;
     }
 
 };
